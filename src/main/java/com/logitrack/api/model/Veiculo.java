@@ -5,10 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
-import lombok.Data;
 
 @Entity
-@Data
 public class Veiculo {
 
     @Id
@@ -21,7 +19,23 @@ public class Veiculo {
     @Column(nullable = false)
     private String modelo;
 
-    private String status; // Ex: DISPONIVEL, EM_ROTA, MANUTENCAO
+    private String status;
 
     private Double capacidadeCarga;
+
+    // Getters e Setters (Padrão JEE)
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getPlaca() { return placa; }
+    public void setPlaca(String placa) { this.placa = placa; }
+
+    public String getModelo() { return modelo; }
+    public void setModelo(String modelo) { this.modelo = modelo; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+
+    public Double getCapacidadeCarga() { return capacidadeCarga; }
+    public void setCapacidadeCarga(Double capacidadeCarga) { this.capacidadeCarga = capacidadeCarga; }
 }
